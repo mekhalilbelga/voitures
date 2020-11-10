@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragments :: headerfiles"></head> 
+
+	<body>
+	
+		<div th:replace="fragments :: headerbodies"></div>
+		<p style="float:right"><img src="https://bit.ly/355tFk2" alt="photo" width="500" height="700"></p>
+		<div class="container">
+		  <h1>Annuaire</h1>
+		  <a href="addAssocie">Ajouter un associé</a>
+		  <p><a href="@{/deleteAssocie/{id}}"> delete un associé</a></p>
+		  <br/><br/>
+		  <div>
+			 <table border="1">
+				<tr>
+				   <th>Prénom</th>
+				   <th>Nom de famille</th>
+				</tr>
+				<tr th:each ="PersonLine : ${persons_table}">
+				   <td th:utext="${PersonLine.firstNameCell}">...</td>
+				   <td th:utext="${PersonLine.lastNameCell}">...</td>
+				</tr>
+			 </table>
+		  </div>
+		</div> <!-- enf of page container -->
+
+		<div th:replace="fragments :: footerbodies"></div>
+
+		</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:replace="fragments :: headerfiles"></head> 
+
+	<body>
+	
+		<div th:replace="fragments :: headerbodies"></div>
+		
+		<div class="container">
+			  <h1>Ajouter un associé dans l'annuaire:</h1>
+
+			  <form th:action="@{/addAssocie}" method="POST">
+				 Prénom:
+				 <input type="text" th:field="${personForm.firstName}" />    
+				 <br/>
+				 Nom de famille:
+				 <input type="text" th:field="${personForm.lastName}" />     
+				 <br/>
+				 <input type="submit" value="Créer" />
+			  </form>
+
+			   
+			  <br/>
+			   
+			  <!-- Check if errorMessage is not null and not empty -->
+			  <div th:if="${errorMessage}" th:utext="${errorMessage}"
+				 style="color:red;font-style:italic;">
+				 ...
+			  </div>
+		</div> <!-- enf of page container -->
+		
+		<div th:replace="fragments :: footerbodies"></div>
+
+		
+	</body>
+
+</html>

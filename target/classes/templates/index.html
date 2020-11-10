@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments :: headerfiles"></head> 
+	<style>
+	fieldset{
+		border: 3px dotted rgb(223, 8, 8);
+		width : 20%;
+	  }
+	</style>
+	<body>
+	
+		<div th:replace="fragments :: headerbodies"></div>
+		<p style="float:right"><img src="https://bit.ly/355tFk2" alt="photo"></p>
+
+		<div class="container">
+					<h1>Page d'accueil</h1>
+
+						<p th:utext="${message}">..!..</p>
+						<fieldset>
+							<p><a th:href="@{/associesList}">Liste des associés</a></p>
+							<p><a th:href="@{/addAssocie}"> Créer un associé</a></p>
+						</fieldset>
+							
+		</div> <!-- enf of page container -->
+
+		<div th:replace="fragments :: footerbodies"></div>
+
+		
+	</body>
+    
+</html>
